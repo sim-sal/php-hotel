@@ -14,60 +14,71 @@
     </style>
 </head>
 <body>
+
+<div class="container">
+    <form class="my-3">
+        <label for="search" >Ricerca per parcheggio:</label>
+        <input type="text" name="searchParking"><br><br>
+        <label for="search" >Ricerca per voto:</label>
+        <input type="text" name="searchVote"><br><br>
+        <input type="submit" value="SEARCH">
+    </form>
+
+    <?php
+
+    $hotels = [
+
+        [
+            'name' => 'Hotel Belvedere',
+            'description' => 'Hotel Belvedere Descrizione',
+            'parking' => true,
+            'vote' => 4,
+            'distance_to_center' => 10.4
+        ],
+        [
+            'name' => 'Hotel Futuro',
+            'description' => 'Hotel Futuro Descrizione',
+            'parking' => true,
+            'vote' => 2,
+            'distance_to_center' => 2
+        ],
+        [
+            'name' => 'Hotel Rivamare',
+            'description' => 'Hotel Rivamare Descrizione',
+            'parking' => false,
+            'vote' => 1,
+            'distance_to_center' => 1
+        ],
+        [
+            'name' => 'Hotel Bellavista',
+            'description' => 'Hotel Bellavista Descrizione',
+            'parking' => false,
+            'vote' => 5,
+            'distance_to_center' => 5.5
+        ],
+        [
+            'name' => 'Hotel Milano',
+            'description' => 'Hotel Milano Descrizione',
+            'parking' => true,
+            'vote' => 2,
+            'distance_to_center' => 50
+        ],
+
+    ];
+
+    // echo "<pre>";
+    // var_dump($hotels);
+    // echo "</pre>";
+
+    foreach ($hotels as $k => $hotel) {
+        echo "[" . $k . "]<br />";
+        foreach ($hotel as $key => $value) {
+            echo $key . " => " . $value . "<br />";
+        }
+    }
+    ?>
+</div>
     
-<form class="container my-3">
-    <label for="search" >Ricerca per parcheggio:</label>
-    <input type="text" name="searchParking"><br><br>
-    <label for="search" >Ricerca per voto:</label>
-    <input type="text" name="searchVote"><br><br>
-    <input type="submit" value="SEARCH">
-</form>
 
-<?php
-
-$hotels = [
-
-    [
-        'name' => 'Hotel Belvedere',
-        'description' => 'Hotel Belvedere Descrizione',
-        'parking' => true,
-        'vote' => 4,
-        'distance_to_center' => 10.4
-    ],
-    [
-        'name' => 'Hotel Futuro',
-        'description' => 'Hotel Futuro Descrizione',
-        'parking' => true,
-        'vote' => 2,
-        'distance_to_center' => 2
-    ],
-    [
-        'name' => 'Hotel Rivamare',
-        'description' => 'Hotel Rivamare Descrizione',
-        'parking' => false,
-        'vote' => 1,
-        'distance_to_center' => 1
-    ],
-    [
-        'name' => 'Hotel Bellavista',
-        'description' => 'Hotel Bellavista Descrizione',
-        'parking' => false,
-        'vote' => 5,
-        'distance_to_center' => 5.5
-    ],
-    [
-        'name' => 'Hotel Milano',
-        'description' => 'Hotel Milano Descrizione',
-        'parking' => true,
-        'vote' => 2,
-        'distance_to_center' => 50
-    ],
-
-];
-
-echo "<pre>";
-var_dump($hotels);
-echo "</pre>";
-?>
 </body>
 </html>
